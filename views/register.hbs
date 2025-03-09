@@ -1,0 +1,17 @@
+<div class="form-container">
+  <h1>Nilansh Sharma
+  </h1>
+  <h2>Account Registration</h2>
+  <form method="POST" action="/register">
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <input
+      type="password"
+      name="confirmPassword"
+      placeholder="Confirm Password"
+      required
+    />
+    <button type="submit">Register</button>
+    {{#if errorMessage}}<label class="error">{{errorMessage}}</label>{{/if}}
+  </form>
+</div>

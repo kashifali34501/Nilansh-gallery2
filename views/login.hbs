@@ -1,0 +1,14 @@
+<div class="form-container">
+  <h1>Nilansh Sharma</h1>
+  <h2>Login</h2>
+  {{#if error}}
+    <p class="error-message">{{error}}</p>
+  {{/if}}
+  <form action="/login" method="POST">
+    <input type="text" name="username" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit" class="login-btn">submit</button>
+    <a href="/register" class="register-btn">Register</a>
+  </form>
+
+</div>

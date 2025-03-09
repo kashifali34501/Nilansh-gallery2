@@ -1,0 +1,159 @@
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 3em;
+  color: #6b0f8c; /* Purple color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#imageBox {
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.form-container form a {
+  background-color: #ba7ecf;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+
+.form-container form a:hover {
+  background-color: #6b0f8c;
+  color: #fff;
+}
+
+.form-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+.form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+button {
+  margin-top: 20px;
+  background-color: skyblue; /* Purple color */
+  border: 2px solid #6b0f8c; /* Purple color */
+  color: black;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.register-btn {
+  width: 100%;
+}
+
+#imageBox img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 15px solid #ddd;
+}
+
+/* Position the form on the left side at the top */
+#imageForm {
+  margin: 0;
+  padding: 0;
+
+  text-align: left;
+}
+
+/* Parent container to align username to the right */
+.user-container {
+  display: flex;
+  /* align-items: center; Aligns username and logout button */
+  justify-content: space-evenly;
+  gap: 10px; /* Adds spacing */
+}
+
+/* Username styling */
+.user-menu {
+  font-size: 20px;
+  font-weight: bold;
+  color: purple;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+}
+
+.logout {
+  display: none;
+  font-size: larger;
+  width: 200px;
+}
+
+/* Add fade-in-out animation */
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.user-menu:hover span {
+  display: none;
+}
+
+/* Show logout on hover with animation */
+.user-menu:hover .logout {
+  display: block;
+  color: #6b0f8c;
+  animation: fadeinout 0.5s ease-in-out;
+}

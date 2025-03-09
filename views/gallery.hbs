@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Nilansh Sharma</h1>
+   <!-- Display Username Instead of Hardcoded Name -->
+    <div class="user-container">
+    
+       <!-- Form to select an image -->
+    <form id="imageForm" action="/gallery" method="POST">
+        {{#each images}}
+            <input type="radio" id="{{this}}" name="image" value="{{this}}" 
+                {{#if (eq ../selectedImage this)}}checked{{/if}}>
+            <label for="{{this}}">{{this}}</label><br>
+        {{/each}}
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Image Display Box -->
+    <div id="imageBox">
+        <img src="/images/{{selectedImage}}" alt="Selected Image" id="selectedImage">
+        <h2>Gallery</h2>
+    </div>
+<div class="user-menu">
+        <span class="username">{{username}}</span>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+    
+
+
+ </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageBox = document.getElementById("selectedImage");
+            if (!imageBox.src || imageBox.src.endsWith("undefined")) {
+                imageBox.src = "/images/default.jpg";
+            }
+        });
+
+        document.getElementById("imageForm").onsubmit = function (event) {
+            event.preventDefault(); // Prevent page reload
+
+            const selectedImage = document.querySelector('input[name="image"]:checked');
+            const imageBox = document.getElementById("selectedImage");
+
+            if (selectedImage) {
+                imageBox.src = `/images/${selectedImage.value}`;
+            } else {
+                imageBox.src = "/images/default.jpg";
+            }
+
+            this.submit(); // Submit the form after updating the image preview
+        };
+    </script>
+</body>
+</html>
